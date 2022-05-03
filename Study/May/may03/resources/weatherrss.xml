@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<rss>
+    <channel>
+        <title>기상청 동네예보 웹서비스 - 경기도 수원시팔달구 인계동 도표예보</title>
+        <link>http://www.kma.go.kr/weather/main.jsp</link>
+        <description>동네예보 웹서비스</description>
+        <generator>동네예보</generator>
+        <pubDate>2022년 05월 03일 (화)요일 17:00</pubDate>
+        <item>
+            <author>기상청</author>
+            <category>경기도 수원시팔달구 인계동</category>
+            <title>동네예보(도표) : 경기도 수원시팔달구 인계동 [X=61,Y=120]</title>
+        </item>
+    </channel>
+</rss>
