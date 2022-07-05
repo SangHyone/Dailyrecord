@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+	
+	<!-- 빈을 등록할 패키지 지정 -->
+	<context:component-scan base-package="kr.human.di"/>
+	<!-- property 파일 사용하겠다. -->
+	<context:property-placeholder location="classpath:jdbc.properties"/>
+	
+	<!-- DB 연결 -->
+	<!-- Maria DB 연결 -->
+	<bean name="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="${m.driver}"/>
+		<property name="url" value="${m.url}"/>
+		<property name="username" value="${m.username}"/>
+		<property name="password" value="${m.password}"/>
+	</bean>
+	<!-- Oracle DB 연결 -->
+	<!-- 
+	<bean name="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="${o.driver}"/>
+		<property name="url" value="${o.url}"/>
+		<property name="username" value="${o.username}"/>
+		<property name="password" value="${o.password}"/>
+	</bean>
+	 -->
+	 
+	 <!-- JDBCTemplate 등록 -->
+	 <bean name="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+	 	<property name="dataSource" ref="dataSource"/>
+	 </bean>
+	 
+</beans>
