@@ -1,0 +1,22 @@
+2022-07-07 16:00:21,046 - ResourceManager.getResource() load exception
+org.apache.velocity.exception.VelocityException: Exception thrown processing Template /vmtemplates/velocity_mailTemplate.html
+	at org.apache.velocity.Template.process(Template.java:164)
+	at org.apache.velocity.runtime.resource.ResourceManagerImpl.loadResource(ResourceManagerImpl.java:437)
+	at org.apache.velocity.runtime.resource.ResourceManagerImpl.getResource(ResourceManagerImpl.java:352)
+	at org.apache.velocity.runtime.RuntimeInstance.getTemplate(RuntimeInstance.java:1533)
+	at org.apache.velocity.app.VelocityEngine.mergeTemplate(VelocityEngine.java:343)
+	at org.apache.velocity.spring.VelocityEngineUtils.mergeTemplate(VelocityEngineUtils.java:70)
+	at org.apache.velocity.spring.VelocityEngineUtils.mergeTemplateIntoString(VelocityEngineUtils.java:108)
+	at org.apache.velocity.spring.VelocityEngineUtils.mergeTemplateIntoString(VelocityEngineUtils.java:89)
+	at kr.human.email.service.MailServiceImpl.getVelocityTemplateContent(MailServiceImpl.java:93)
+	at kr.human.email.service.MailServiceImpl$2.prepare(MailServiceImpl.java:78)
+	at org.springframework.mail.javamail.JavaMailSenderImpl.send(JavaMailSenderImpl.java:375)
+	at org.springframework.mail.javamail.JavaMailSenderImpl.send(JavaMailSenderImpl.java:366)
+	at kr.human.email.service.MailServiceImpl.sendEmail(MailServiceImpl.java:82)
+	at kr.human.email.app.AppMain01.main(AppMain01.java:19)
+Caused by: java.lang.NullPointerException: charsetName
+	at java.base/java.io.InputStreamReader.<init>(InputStreamReader.java:95)
+	at org.apache.velocity.Template.process(Template.java:133)
+	... 13 more
+2022-07-07 16:04:18,867 - ResourceManager : unable to find resource '/vmtemplates/velocity_mailTemplate.html' in any resource loader.
+2022-07-07 16:04:40,415 - ResourceManager : unable to find resource '/vmtemplates/velocity_mailTemplate.html' in any resource loader.
